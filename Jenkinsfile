@@ -9,7 +9,7 @@ pipeline {
                     sh "sudo docker build -t testdemo:$BUILD_NUMBER ."
                     sh "sudo docker stop \$(sudo docker ps -q)"
                     sh "sudo docker rm \$(sudo docker ps -aq)"
-                    sh "sudo docker run -d -p 8080:8080 testdemo:$BUILD_NUMBER"
+                    sh "sudo docker run -d -p 8081:8081 testdemo:$BUILD_NUMBER"
                 }
             }
         }
