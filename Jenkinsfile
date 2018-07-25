@@ -21,7 +21,7 @@ pipeline {
         stage ("Deploy to openshift"){
             steps {
                 script {
-                     sh "/usr/bin/oc-tool/oc --server https://192.168.99.100:8443 --token=ISvTOZiU2SyKc6a2GjO0DvbVBKWAC2VlG60zpD8rc9g --insecure-skip-tls-verify new-app hsafir/testdemo:$BUILD_NUMBER"
+                     sh "/usr/bin/oc-tool/oc --server https://192.168.99.100:8443 --token=ISvTOZiU2SyKc6a2GjO0DvbVBKWAC2VlG60zpD8rc9g --insecure-skip-tls-verify new-app hsafir/testdemo-$BUILD_NUMBER"
                 }
             }
         }
