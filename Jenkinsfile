@@ -1,7 +1,7 @@
 pipeline {
     agent any
     stages{
-        stage (test demo){
+        stage ("test demo"){
             steps {
                 script {
                     sh "npm install"
