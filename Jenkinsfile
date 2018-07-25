@@ -13,9 +13,8 @@ pipeline {
             steps {
                 script {
                     sh "sudo docker build -t testdemo:$BUILD_NUMBER ."
-                    sh "docker login -u hsafir -p Test123$"
-                    sh "docker tag testdemo:$BUILD_NUMBER hsafir/testdemo:$BUILD_NUMBER"
-                    sh "docker push hsafir/testdemo:$BUILD_NUMBER"
+                    sh "sudo docker tag testdemo:$BUILD_NUMBER hsafir/testdemo:$BUILD_NUMBER"
+                    sh "sudo docker push hsafir/testdemo:$BUILD_NUMBER"
                 }
             }
         }
