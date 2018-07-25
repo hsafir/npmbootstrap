@@ -21,11 +21,7 @@ pipeline {
         stage ("Deploy to openshift"){
             steps {
                 script {
-                    openshift.withCluster( 'https://192.168.99.100:8443', 'ISvTOZiU2SyKc6a2GjO0DvbVBKWAC2VlG60zpD8rc9g' ) {
-                        openshift.withProject( 'test' ) {
-                            sh "/usr/bin/oc-tool/oc new-app hsafir/testdemo:$BUILD_NUMBER" 
-                        }
-                    }
+                     sh "/usr/bin/oc-tool/oc --server https://192.168.99.100:8443 --token=ISvTOZiU2SyKc6a2GjO0DvbVBKWAC2VlG60zpD8rc9g new-app hsafir/testdemo:$BUILD_NUMBER"
                 }
             }
         }
